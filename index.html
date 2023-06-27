@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Femme Frock Boutique</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .column {
+      flex-basis: 48%;
+      padding: 10px;
+      background-color: #f1f1f1;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .column1 {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+      }
+    }
+
+    .destination {
+            display: none;
+        }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="column1">
+        <div class="Container2">
+            <h1>Welcome to The Femme Frock Boutique</h1>
+            <p>Discover a world of exquisite frocks at our boutique for ladies. From flowing maxi dresses to chic cocktail frocks, we offer a diverse collection to suit every occasion. Our designs combine elegance with contemporary flair, ensuring you'll find the perfect ensemble to express your unique style. Step into our store and indulge in the latest trends, impeccable craftsmanship, and a delightful shopping experience.</p>
+            <h2>Category</h2>
+            <div class="source" onclick="showDetails(this)">
+                <img src="img/AUDERY DRESS.jpg" width="260" height="200">
+                <h3>AUDREY DRESS</h3>
+            </div>
+            <div class="destination">
+                <h3>AUDREY DRESS</h3>
+                <p>
+                    Brand: Nils Store<br>
+                    Product Code: 236000008<br>
+                    Availability: In Stock<br>
+                    Price: $2050
+                </p>
+            </div>
+            
+            <div class="source" onclick="showDetails(this)">
+                <img src="img/RED BOHO KIMONO.jpg" width="260" height="200">
+                <h3>RED BOHO KIMONO</h3>
+            </div>
+            <div class="destination">
+                <h3>RED BOHO KIMONO</h3>
+                <p>
+                    Brand: Nils Store<br>
+                    Product Code: 236000008<br>
+                    Availability: In Stock<br>
+                    Price: $1850
+                </p>
+            </div>
+            
+            <div class="source" onclick="showDetails(this)">
+                <img src="img/ELOISE SLEEVELESS BLACK DRESS.jpg" width="260" height="200">
+                <h3>ELOISE SLEEVELESS BLACK DRESS</h3>
+            </div>
+            <div class="destination">
+                <h3>ELOISE SLEEVELESS BLACK DRESS</h3>
+                <p>
+                    Brand: Nils Store<br>
+                    Product Code: 2360450008<br>
+                    Availability: In Stock<br>
+                    Price: $1450
+                </p>
+            </div>
+            
+            <div class="source" onclick="showDetails(this)">
+                <img src="img/JOSSIE BROWN KIMONO.jpg" width="260" height="200">
+                <h3>JOSSIE BROWN KIMONO</h3>
+            </div>
+            <div class="destination">
+                <h3>JOSSIE BROWN KIMONO</h3>
+                <p>
+                    Brand: Nils Store<br>
+                    Product Code: 8360047008<br>
+                    Availability: In Stock<br>
+                    Price: $1550
+                </p>
+            </div>
+        </div>
+        
+        <div id="display"></div>
+    
+        <div class="clearfix"></div>
+    </div>
+    <div class="column2">
+      
+    </div>
+  </div>
+
+  <script>
+   
+  function showDetails(sourceDiv) {
+    var destinationDiv = sourceDiv.nextElementSibling;
+    var columnDiv = document.getElementsByClassName("column2")[0];
+
+    var sourceImage = sourceDiv.getElementsByTagName("img")[0];
+    var destinationImage = document.createElement("img");
+    destinationImage.src = sourceImage.src;
+
+    destinationDiv.appendChild(destinationImage);
+    destinationDiv.style.display = "block";
+    
+
+    columnDiv.innerHTML = "";
+    columnDiv.appendChild(destinationDiv);
+  }
+
+
+</script>
+
+
+</body>
+</html>
